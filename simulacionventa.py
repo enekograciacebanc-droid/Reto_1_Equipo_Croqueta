@@ -58,7 +58,45 @@ while 1==1:
                               dinero_flo+=5
                          elif(producto_int==4):
                               break
+                    if(restaurante_int==2):
+                         print("Elige in producto de Burgerwatssapp")
+                         print("1- Hmaburguesa de whatsapp 5€")
+                         print("2- Menu super hyper mega deluxe whatsapp 20€")
+                         print("3- Hamburguesa super loquendo_777 10€")
+                         print("4- salir")
+                         producto_int=int(input(""))
+                         if(producto_int==1):
+                              dinero_flo+=5
+                         elif(producto_int==2):
+                              dinero_flo+=20
+                         elif(producto_int==3):
+                              dinero_flo+=10
+                         elif(producto_int==4):
+                              break
 
+                    if(restaurante_int==3):
+                         print("Elige su producto de Bar Pepe")
+                         print("1- Bocata lomo ya 5€")
+                         print("2- Bocadillo de tortilla 4€")
+                         print("3- Bocadillo de chope 5€")
+                         print("4- salir")
+                         producto_int=int(input(""))
+                         if(producto_int==1):
+                                dinero_flo+=5
+                         elif(producto_int==2):
+                              dinero_flo+=4
+                         elif(producto_int==3):
+                              dinero_flo+=4
+                         elif(producto_int==4):
+                              break
+
+                    if(restaurante_int==4):
+                         print("Elige su producto del bar tang-yuan-qing-song-xue-ming-jin")
+                         print("1- Menu Tang(pastel Hu)")
+                         print("2- menu Yuan(hot pot de cordero)")
+                         print("3-menu Qing(Jiu Zhuan Da Chang)")
+                         print("4- salir")
+                         
     
     else:
         print("Introduce un valor valido.")
