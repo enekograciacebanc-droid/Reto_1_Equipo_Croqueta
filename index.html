@@ -1,72 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CroquetApp</title>
+
     <style>
-        h1 {
+        .cabecera {
+            background-color: rgb(71, 106, 187);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .cabecera img {
+            position: absolute;
+            left: calc(50% - 700px);
+            width: 50px;
+            height: 50px;
+        }
+
+        .cabecera h1 {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            text-align: center;
-            background-color: rgb(90, 90, 255);
-            padding: 50px;
             color: white;
+            margin: 0;
         }
 
         nav {
-
             text-align: center;
-
+            background-color: rgb(75, 75, 255);
+            padding: 30px;
         }
 
-        div {
+        .indice {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .indice:hover {
+            text-decoration: underline;
+        }
+
+        .seccion {
             text-align: center;
             background-color: rgb(203, 233, 255);
-            margin-left: 20%;
-            margin-right: 20%;
-            margin-top: 3%;
-            margin-bottom: 3%;
+            margin: 3% 20%;
+            padding: 20px;
         }
 
         footer {
             background-color: rgb(90, 90, 255);
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
 
+        footer h3 {
+            margin: 0;
+        }
     </style>
 </head>
+
 <body>
-    
+
     <header>
 
-        <h1>CroquetApp</h1>
+        <div class="cabecera">
+            <img src="imgs/croquetapp_transparente.png" alt="Logo de CroquetApp">
+            <h1>CroquetApp</h1>
+        </div>
 
         <nav>
-
-            <a href="#Inicio">Inicio</a>
-            <a href="#Como funciona">Como funciona</a>
-            <a href="#Ventajas">Ventajas</a>
-            <a href="#Contacto">Contacto</a>
-
+            <a class="indice" href="#inicio">Inicio</a>
+            <a class="indice" href="#como-funciona">Como funciona</a>
+            <a class="indice" href="#ventajas">Ventajas</a>
+            <a class="indice" href="#contacto">Contacto</a>
         </nav>
 
     </header>
 
-    <div>
-        <h2>¿Quienes somos?</h2>
-    </div>
+    <main>
 
-    <div>
-        <h2>¿Cómo funciona nuestro servicio?</h2>
-    </div>
+        <section class="seccion" id="inicio">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                Somos CroquetApp, una empresa dedicada al reparto
+                de comida mediante drones.
+            </p>
+        </section>
 
-    <div>
-        <h2>¿Cuales son nuestras ventajas frente a otras empresas?</h2>
-    </div>
+        <section class="seccion" id="como-funciona">
+            <h2>¿Cómo funciona nuestro servicio?</h2>
+            <p>
+                Realiza tu pedido y nuestros drones se encargan
+                de llevar la comida directamente hasta tu ubicación.
+            </p>
+        </section>
 
-<footer>
-    <h3> Contactanos</h3>
+        <section class="seccion" id="ventajas">
+            <h2>¿Cuáles son nuestras ventajas frente a otras empresas?</h2>
+            <p>
+                Ofrecemos entregas rápidas, eficientes y modernas
+                utilizando tecnología de drones.
+            </p>
+        </section>
 
-</footer>
+    </main>
+
+    <footer id="contacto">
+        <h3>Contáctanos</h3>
+        <p>CroquetApp - Reparto de comida mediante drones</p>
+    </footer>
 
 </body>
+
 </html>
