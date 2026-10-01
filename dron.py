@@ -1,11 +1,3 @@
-X_MIN_FLO = float(-2000)
-Y_MIN_FLO = float(-2000)
-Z_MIN_FLO = float(0)
-
-X_MAX_FLO = float(2000)
-Y_MAX_FLO = float(2000)
-Z_MAX_FLO = float(2000)
-
 x_actual_flo = float(0)
 y_actual_flo = float(0)
 z_actual_flo = float(0)
@@ -20,19 +12,47 @@ while True:
     print("0- Cerrar Programa")
     print("1- Posición Predefinida")
     print("2- Coordenadas Manuales")
-    input("")
+    eleccion_int = int(input(""))
 
-    print("Elige a que ubicación quieres que el dron se dirija con los ejes. Ejes X e Y (maximo 2000 y minimo -2000) eje Z (maximo 2000 y minimo 0)")
+    if(eleccion_int == 0):
+        break
+    elif(eleccion_int == 1):
+        break
+    elif(eleccion_int == 2):
 
-    
-    print("Posicion X")
-    posicion_usuario_x_flo = float(input(""))
+        print("Elige a que ubicación quieres que el dron se dirija con los ejes. Ejes X e Y (maximo 2000 y minimo -2000) eje Z (maximo 2000 y minimo 0)")
+        print("Si se elige una posición no valida, el programa eligirá una automáticamente.")
+        print("")
+        print("Posicion X")
+        posicion_usuario_x_flo = float(input(""))
+        if(posicion_usuario_x_flo > 2000):
+            print("Posición incorrecta, X se ajustará a 2000")
+            posicion_usuario_x_flo = 2000
+        elif(posicion_usuario_x_flo < -2000):
+            print("Posición incorrecta, X se ajustará a -2000")
+            posicion_usuario_x_flo = -2000
 
-    print("Posicion Y")
-    posicion_usuario_y_flo = float(input(""))
+        print("Posicion Y")
+        posicion_usuario_y_flo = float(input(""))
+        if(posicion_usuario_y_flo > 2000):
+            print("Posición incorrecta, Y se ajustará a 2000")
+            posicion_usuario_y_flo = 2000
+        elif(posicion_usuario_y_flo < -2000):
+            print("Posición incorrecta, Y se ajustará a -2000")
+            posicion_usuario_y_flo = -2000
 
-    print("Posicion Z")
-    posicion_usuario_z_flo = float(input(""))
+        print("Posicion Z")
+        posicion_usuario_z_flo = float(input(""))
+        posicion_usuario_z_flo = float(input(""))
+        if(posicion_usuario_z_flo > 2000):
+            print("Posición incorrecta, Z se ajustará a 2000")
+            posicion_usuario_z_flo = 2000
+        elif(posicion_usuario_z_flo < 0):
+            print("Posición incorrecta, Z se ajustará a 0")
+            posicion_usuario_z_flo = 0
+    else:
+        print("Seleccion incorrecta")
+        continue
 
     distancia_z_flo = z_actual_flo + posicion_usuario_z_flo
     tiempo_estimado_z_flo = distancia_z_flo / 100
@@ -44,3 +64,6 @@ while True:
 
     print("En llegar a su destino, el dron tardará", tiempo_estimado_xy_flo, "minutos.")
     print("En total, el dron tardará", tiempo_estimado_xy_flo + tiempo_estimado_z_flo, "minutos.")
+    print("")
+
+print("Cerrando el programa.")
