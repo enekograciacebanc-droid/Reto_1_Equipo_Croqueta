@@ -32,11 +32,36 @@ while 1==1:
                     break
             
             elif(seleccion_int == 2):
-                    break
-                 
+                while 1 == 1:
+                    print("===============")
+                    print("Restaurantes")
+                    print("===============")
+                    print("1- Ali kebab")
+                    print("2- Burgerwatssapp")
+                    print("3- Bar pepe")
+                    print("4- Bar tang-yuan-qing-song-xue-ming-jin")
+                    print("5- salir")
+                    restaurante_int=int(input(""))
+                    if(restaurante_int==1):
+                         print("Elegiste Ali Kebab")
+                         print("1- kebab mixto 5€")
+                         print("2- kebab de pollo 4€")
+                         print("3- kebab de ternera 5€")
+                         print("4- salir")
+                         producto_int=int(input(""))
+                        
+                         if(producto_int==1):
+                              dinero_flo+=5
+                         elif(producto_int==2):
+                              dinero_flo+=4
+                         elif(producto_int==3):
+                              dinero_flo+=5
+                         elif(producto_int==4):
+                              break
 
+    
     else:
-        print("Introduce un valor valido.")  
+        print("Introduce un valor valido.")
         
 
 
