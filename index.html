@@ -52,8 +52,44 @@
             padding: 20px;
         }
 
+        .seccion_restaurantes {
+            background-color: rgb(210, 126, 0);
+            padding: 70px;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .seccion_lista_img {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+        .seccion_lista {
+            text-align: center;
+            background-color: rgb(203, 233, 255);
+            margin: 3%;
+            margin-left: 300px;
+            padding: 20px;
+        }
+
+        .seccion_lista_img img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            margin-left: 300px;
+        }
+
+        .h3_lista {
+            margin-left: 300px;
+            font-size: 50px;
+        }
+        
         footer {
-            background-color: rgb(90, 90, 255);
+            position: relative;
+            background-color: rgb(255, 153, 0);
             color: white;
             text-align: center;
             padding: 20px;
@@ -62,6 +98,15 @@
         footer h3 {
             margin: 0;
         }
+
+        .GitHub_img {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+        }
+
     </style>
 </head>
 
@@ -70,7 +115,7 @@
     <header>
 
         <div class="cabecera">
-            <img src="imgs/croquetapp_transparente.png" alt="Logo de CroquetApp">
+            <img src="https://media.discordapp.net/attachments/1315741203089854465/1555471156591468656/croquetapp_transparente.png?backend=b2&ex=6ac0a4e6&is=6abf5366&hm=071f2521201255bd6b93ff82464a9ac8bca9ae5fa30ffdda39b6305c0cff2f42&=&format=webp&quality=lossless&width=768&height=768" alt="Logo de CroquetApp">
             <h1>CroquetApp</h1>
         </div>
 
@@ -109,11 +154,38 @@
             </p>
         </section>
 
+        <section class="seccion_restaurantes">
+            <h2>RESTAURANTES DISPONIBLES</h2>
+        </section>
+        <h3 class="h3_lista">Burgerwhatsapp</h3>
+        <div class="seccion_lista_img">
+            <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/212/577/fee.jpg" alt="Burgerwhatsapp">
+        
+            <section class="seccion_lista">
+            <p>HolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHola</p>
+        </section>
+        <section >
+            </section>
+        </div>
+
+        <h3 class="h3_lista">Burgerwhatsapp</h3>
+        <div class="seccion_lista_img">
+            <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/212/577/fee.jpg" alt="Burgerwhatsapp">
+        
+            <section class="seccion_lista">
+            <p>HolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHola</p>
+        </section>
+        <section >
+            </section>
+        </div>
     </main>
 
     <footer id="contacto">
         <h3>Contáctanos</h3>
         <p>© 2026 CroquetApp - Reparto de comida mediante drones</p>
+        <a href="https://github.com/enekograciacebanc-droid/Reto_1_Equipo_Croqueta/tree/staging-global" target="_blank"> 
+        <img class="GitHub_img" src="https://media.discordapp.net/attachments/1315741203089854465/1555471158181101568/github.png?backend=b2&ex=6ac0a4e7&is=6abf5367&hm=b58cfe58b8f9f77d3c968670f24f9dede961a76b6854f062aecce4dd9a80436e&=&format=webp&quality=lossless" alt="GitHub">
+        </a>
     </footer>
 
 </body>
