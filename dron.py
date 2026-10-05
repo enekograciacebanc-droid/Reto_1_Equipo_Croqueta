@@ -23,6 +23,17 @@ listadelistas_custom_list = [localizacion_usuario_1,localizacion_usuario_2,local
 
 import math
 
+def convertir_tiempo(minutos):
+    minutos_enteros = int(minutos)
+    segundos = round((minutos - minutos_enteros) * 60)
+
+    if(segundos == 60): #si los segundos son 60 simplemente añade 1 minuto y deja los segundos en 0
+        minutos_enteros += 1
+        segundos = 0
+
+    return minutos_enteros, segundos
+#define, convierte el float (resultado de tiempo estimado) a minutos/segundos
+
 while True: #Comienzo del menú
     print("Posicion actual del dron",x_actual_flo,", ",y_actual_flo,", ",z_actual_flo,".")
     print("")
@@ -47,18 +58,25 @@ while True: #Comienzo del menú
         elif(eleccion_int == 1): #Menú de localizaciones a las que moverse
             print("Localizaciones actuales")
             print("")
-            for x in listadelistas_list:
-                print(x[0])
-            print("")
-            print("Escribe el nombre exacto de la localización a la que quieras moverte")
-            eleccion_localizacion_str = input("")
 
-            for x in listadelistas_list:
-                if x[0] == eleccion_localizacion_str:
-                    posicion_usuario_x_flo = float(x[1])
-                    posicion_usuario_y_flo = float(x[2])
-                    posicion_usuario_z_flo = float(x[3])
-                    break
+            for i in range(len(listadelistas_list)):
+                print(i + 1, "-", listadelistas_list[i][0])
+
+            print("")
+            print("Escribe el número de la localización a la que quieras moverte")
+            eleccion_localizacion_int = int(input(""))
+
+            if(eleccion_localizacion_int >= 1) and (eleccion_localizacion_int <= len(listadelistas_list)):
+
+                localizacion_elegida = listadelistas_list[eleccion_localizacion_int - 1]
+
+                posicion_usuario_x_flo = float(localizacion_elegida[1])
+                posicion_usuario_y_flo = float(localizacion_elegida[2])
+                posicion_usuario_z_flo = float(localizacion_elegida[3])
+
+            else:
+                print("Selección incorrecta")
+                continue
 
         elif(eleccion_int == 2): #Menú de localizaciones personalizadas
             print("Localizaciones personalizadas actuales")
@@ -162,18 +180,24 @@ while True: #Comienzo del menú
         print("Seleccion incorrecta")
         continue
 
-    distancia_z_flo = z_actual_flo + posicion_usuario_z_flo
+    distancia_z_flo = abs(posicion_usuario_z_flo - z_actual_flo)
     tiempo_estimado_z_flo = distancia_z_flo / 100
     #Cálculo de tiempo estimado eje Z
 
-    print("En subir/bajar, el dron tardará", tiempo_estimado_z_flo, "minutos.")
+    minutos_z, segundos_z = convertir_tiempo(tiempo_estimado_z_flo)
+    print("En subir/bajar, el dron tardará", minutos_z, "minutos y", segundos_z, "segundos.")
 
     distancia_xy_flo = math.sqrt(math.pow((posicion_usuario_x_flo - x_actual_flo),2) + math.pow((posicion_usuario_y_flo - y_actual_flo),2))
     tiempo_estimado_xy_flo = distancia_xy_flo / 100
-    #Cálculo de tiempo estimado eje X/Y
+    # Cálculo de tiempo estimado eje X/Y
 
-    print("En llegar a su destino, el dron tardará", tiempo_estimado_xy_flo, "minutos.")
-    print("En total, el dron tardará", tiempo_estimado_xy_flo + tiempo_estimado_z_flo, "minutos.")
+    minutos_xy, segundos_xy = convertir_tiempo(tiempo_estimado_xy_flo)
+    print("En llegar a su destino, el dron tardará", minutos_xy, "minutos y", segundos_xy, "segundos.")
+
+    tiempo_total_flo = tiempo_estimado_xy_flo + tiempo_estimado_z_flo
+    minutos_total, segundos_total = convertir_tiempo(tiempo_total_flo)
+
+    print("En total, el dron tardará", minutos_total, "minutos y", segundos_total, "segundos.")
     print("")
 
     x_actual_flo = posicion_usuario_x_flo
