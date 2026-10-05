@@ -14,12 +14,16 @@ localizacion_usuario_1 = ["localizacion_usuario_1",0,0,0]
 localizacion_usuario_2 = ["localizacion_usuario_2",0,0,0]
 localizacion_usuario_3 = ["localizacion_usuario_3",0,0,0]
 
+#Listas para las localizaciones personalizadas
+
 listadelistas_list = [mcdonalds,rascacielos_alto,casa_de_pedro,avion_que_por_algun_motivo_no_se_mueve,localizacion_usuario_1,localizacion_usuario_2,localizacion_usuario_3]
 listadelistas_custom_list = [localizacion_usuario_1,localizacion_usuario_2,localizacion_usuario_3]
 
+#Predefinir variables y listas
+
 import math
 
-while True:
+while True: #Comienzo del menú
     print("Posicion actual del dron",x_actual_flo,", ",y_actual_flo,", ",z_actual_flo,".")
     print("")
 
@@ -31,16 +35,16 @@ while True:
 
     if(eleccion_int == 0):
         break
-    elif(eleccion_int == 1):
-        print("¿Quieres moverte o añadir una localización?")
+    elif(eleccion_int == 1): #Menú de posiciones predefinidas
+        print("¿Quieres moverte o personalizar una localización?")
         print("0- volver")
         print("1- Mover dron")
-        print("2- Modificar localización")
+        print("2- Personalizar localización")
         eleccion_int = int(input(""))
 
         if(eleccion_int == 0):
             continue
-        elif(eleccion_int == 1):
+        elif(eleccion_int == 1): #Menú de localizaciones a las que moverse
             print("Localizaciones actuales")
             print("")
             for x in listadelistas_list:
@@ -56,16 +60,16 @@ while True:
                     posicion_usuario_z_flo = float(x[3])
                     break
 
-        elif(eleccion_int == 2):
+        elif(eleccion_int == 2): #Menú de localizaciones personalizadas
             print("Localizaciones personalizadas actuales")
             print("")
             for x in listadelistas_custom_list:
                 print(x[0])
 
             print("")
-            print("Puedes modificar una de estas 3 localizaciones. ¿Cual quieres modificar? (escribe 1, 2 o 3)")
+            print("Puedes modificar una de estas 3 localizaciones. ¿Cual quieres cambiar? (escribe 1, 2 o 3)")
             eleccion_int = int(input())
-            print("Selecciona el nombre de la localización (Se recomienda usar solo minusculas, no usar espacion y no usar tildes.)")
+            print("Selecciona el nombre de la localización (Se recomienda usar solo minusculas, no usar espacios y no usar tildes.)")
             customname_str = str(input())
             print("Selecciona la posición X (Min. -2000 Max. 2000)")
             customx_flo = float(input())
@@ -123,7 +127,7 @@ while True:
             print("Seleccion incorrecta")
             continue
 
-    elif(eleccion_int == 2):
+    elif(eleccion_int == 2): #Menú de movimiento por ejes X/Y/Z
 
         print("Elige a que ubicación quieres que el dron se dirija con los ejes. Ejes X e Y (maximo 2000 y minimo -2000) eje Z (maximo 2000 y minimo 0)")
         print("Si se elige una posición no valida, el programa eligirá una automáticamente.")
@@ -160,11 +164,13 @@ while True:
 
     distancia_z_flo = z_actual_flo + posicion_usuario_z_flo
     tiempo_estimado_z_flo = distancia_z_flo / 100
+    #Cálculo de tiempo estimado eje Z
 
-    print("En subir, el dron tardará", tiempo_estimado_z_flo, "minutos.")
+    print("En subir/bajar, el dron tardará", tiempo_estimado_z_flo, "minutos.")
 
     distancia_xy_flo = math.sqrt(math.pow((posicion_usuario_x_flo - x_actual_flo),2) + math.pow((posicion_usuario_y_flo - y_actual_flo),2))
     tiempo_estimado_xy_flo = distancia_xy_flo / 100
+    #Cálculo de tiempo estimado eje X/Y
 
     print("En llegar a su destino, el dron tardará", tiempo_estimado_xy_flo, "minutos.")
     print("En total, el dron tardará", tiempo_estimado_xy_flo + tiempo_estimado_z_flo, "minutos.")
@@ -173,5 +179,6 @@ while True:
     x_actual_flo = posicion_usuario_x_flo
     y_actual_flo = posicion_usuario_y_flo
     z_actual_flo = posicion_usuario_z_flo
+    #Ajusta la posición actual a la nueva
 
 print("Cerrando el programa.")
