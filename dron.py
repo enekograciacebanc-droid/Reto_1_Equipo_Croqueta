@@ -24,14 +24,14 @@ listadelistas_custom_list = [localizacion_usuario_1,localizacion_usuario_2,local
 import math
 
 def convertir_tiempo(minutos):
-    minutos_enteros = int(minutos)
-    segundos = round((minutos - minutos_enteros) * 60)
+    minutos_enteros_int = int(minutos)
+    segundos_int = int(round((minutos - minutos_enteros_int) * 60))
 
-    if(segundos == 60): #si los segundos son 60 simplemente añade 1 minuto y deja los segundos en 0
-        minutos_enteros += 1
-        segundos = 0
+    if(segundos_int == 60): #si los segundos son 60 simplemente añade 1 minuto y deja los segundos en 0
+        minutos_enteros_int += 1
+        segundos_int = 0
 
-    return minutos_enteros, segundos
+    return minutos_enteros_int, segundos_int
 #define, convierte el float (resultado de tiempo estimado) a minutos/segundos
 
 while True: #Comienzo del menú
@@ -184,20 +184,20 @@ while True: #Comienzo del menú
     tiempo_estimado_z_flo = distancia_z_flo / 100
     #Cálculo de tiempo estimado eje Z
 
-    minutos_z, segundos_z = convertir_tiempo(tiempo_estimado_z_flo)
-    print("En subir/bajar, el dron tardará", minutos_z, "minutos y", segundos_z, "segundos.")
+    minutos_z_int, segundos_z_int = convertir_tiempo(tiempo_estimado_z_flo)
+    print("En subir/bajar, el dron tardará", minutos_z_int, "minutos y", segundos_z_int, "segundos.")
 
     distancia_xy_flo = math.sqrt(math.pow((posicion_usuario_x_flo - x_actual_flo),2) + math.pow((posicion_usuario_y_flo - y_actual_flo),2))
     tiempo_estimado_xy_flo = distancia_xy_flo / 100
     # Cálculo de tiempo estimado eje X/Y
 
-    minutos_xy, segundos_xy = convertir_tiempo(tiempo_estimado_xy_flo)
-    print("En llegar a su destino, el dron tardará", minutos_xy, "minutos y", segundos_xy, "segundos.")
+    minutos_xy_int, segundos_xy_int = convertir_tiempo(tiempo_estimado_xy_flo)
+    print("En llegar a su destino, el dron tardará", minutos_xy_int, "minutos y", segundos_xy_int, "segundos.")
 
     tiempo_total_flo = tiempo_estimado_xy_flo + tiempo_estimado_z_flo
-    minutos_total, segundos_total = convertir_tiempo(tiempo_total_flo)
+    minutos_total_int, segundos_total_int = convertir_tiempo(tiempo_total_flo)
 
-    print("En total, el dron tardará", minutos_total, "minutos y", segundos_total, "segundos.")
+    print("En total, el dron tardará", minutos_total_int, "minutos y", segundos_total_int, "segundos.")
     print("")
 
     x_actual_flo = posicion_usuario_x_flo
