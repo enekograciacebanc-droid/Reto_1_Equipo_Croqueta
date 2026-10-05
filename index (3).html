@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CroquetApp</title>
+
+    <style>
+        .cabecera {
+            background-color: rgb(255, 183, 77);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .cabecera img {
+            position: absolute;
+            left: calc(50% - 700px);
+            width: 50px;
+            height: 50px;
+        }
+
+        .cabecera h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            background-color: rgb(255, 153, 0);
+            padding: 30px;
+        }
+
+        .indice {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .indice:hover {
+            text-decoration: underline;
+        }
+
+        .seccion {
+            text-align: center;
+            background-color: rgb(203, 233, 255);
+            margin: 3% 20%;
+            padding: 20px;
+        }
+
+        .seccion_restaurantes {
+            background-color: rgb(210, 126, 0);
+            padding: 70px;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .seccion_lista_img {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+        .seccion_lista {
+            text-align: left;
+            background-color: rgb(203, 233, 255);
+            margin: 3%;
+            margin-left: 300px;
+            padding: 20px;
+        }
+
+        .seccion_lista_img img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            margin-left: 300px;
+        }
+
+        .h3_lista {
+            margin-left: 300px;
+            font-size: 50px;
+        }
+        
+        footer {
+            position: relative;
+            background-color: rgb(255, 153, 0);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer h3 {
+            margin: 0;
+        }
+
+        .GitHub_img {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="cabecera">
+            <img src="https://i.ibb.co/QjMsLwsy/croquetapp-transparente.png" alt="croquetapp-transparente">
+            <h1>CroquetApp</h1>
+        </div>
+
+        <nav>
+            <a class="indice" href="#inicio">Inicio</a>
+            <a class="indice" href="#como-funciona">Como funciona</a>
+            <a class="indice" href="#ventajas">Ventajas</a>
+            <a class="indice" href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="seccion" id="inicio">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                Somos CroquetApp, una empresa dedicada al reparto
+                de comida mediante drones.
+            </p>
+        </section>
+
+        <section class="seccion" id="como-funciona">
+            <h2>¿Cómo funciona nuestro servicio?</h2>
+            <p>
+                Realiza tu pedido y nuestros drones se encargan
+                de llevar la comida directamente hasta tu ubicación.
+            </p>
+        </section>
+
+        <section class="seccion" id="ventajas">
+            <h2>¿Cuáles son nuestras ventajas frente a otras empresas?</h2>
+            <p>
+                Ofrecemos entregas rápidas, eficientes y modernas
+                utilizando tecnología de drones.
+            </p>
+        </section>
+
+        <section class="seccion_restaurantes">
+            <h2>RESTAURANTES DISPONIBLES</h2>
+        </section>
+
+        <h3 class="h3_lista">Ali Kebab</h3>
+        <div class="seccion_lista_img">
+            <img src="https://i.ibb.co/C5W02cK7/alikebab.png" alt="Ali Kebab">
+        
+            <section class="seccion_lista">
+            <p>Sabor que viene directo del Mediterráneo.<br>
+            <br>En Ali Kebab encontrarás kebabs, dürüm, platos combinados y otras especialidades preparadas al momento. Carne, verduras frescas y nuestras salsas para crear una comida rápida, abundante y llena de sabor. Ideal para comer allí, recoger o pedir a domicilio.<br>
+            <br>Especialidades: Kebab · Dürüm · Lahmacun · Falafel · Hamburguesas · Platos combinados
+
+</p>
+        </section>
+        </div>
+
+        <h3 class="h3_lista">Burgerwhatsapp</h3>
+        <div class="seccion_lista_img">
+            <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/212/577/fee.jpg" alt="Burgerwhatsapp">
+        
+            <section class="seccion_lista">
+            <p>Tu burger, tu manera.<br>
+            <br>Burgerwhatsapp es el sitio perfecto para los amantes de las hamburguesas contundentes y la comida rápida. Hamburguesas recién preparadas, patatas crujientes y opciones para compartir, todo pensado para quitar el hambre sin complicaciones.<br>
+            <br>Especialidades: Hamburguesas · Patatas · Nuggets · Alitas · Menús · Comida para compartir</p>
+        </section>
+        </div>
+
+        <h3 class="h3_lista">Bar Pepe</h3>
+        <div class="seccion_lista_img">
+            <img src="https://i0.wp.com/barpepedonostia.com/wp-content/uploads/2024/02/IMG_3075-3.jpg?fit=5709%2C3776&ssl=1" alt="Bar Pepe">
+        
+            <section class="seccion_lista">
+            <p>El bar de toda la vida.<br>
+            <br>Bar Pepe es ese lugar donde siempre apetece parar: café por la mañana, una caña después del trabajo y unos buenos pinchos para acompañar. Ambiente cercano, cocina tradicional y los clásicos que nunca fallan.
+            Desde tortilla de patata y croquetas hasta bocadillos, raciones y pinchos variados. Un bar español, sencillo y de los de siempre.<br>
+            <br>Especialidades: Pinchos · Tortilla · Croquetas · Bocadillos · Raciones · Cerveza · Café</p>
+        </section>
+        </div>
+
+        <h3 class="h3_lista">Bar Tang - Yuang - Qing - Song - Xue - Ming - Jin</h3>
+        <div class="seccion_lista_img">
+            <img src="https://foodandfriends.org/wp-content/uploads/2025/04/Copy-of-20230913-JBFTasteAmerica-14.jpg" alt="Bar Chino">
+        
+            <section class="seccion_lista">
+            <p>Sabores de China en un ambiente cercano.<br>
+            <br>Bar Tang-Yuang-Qing-Song-Xue-Ming-Jin combina el ambiente informal de un bar de barrio con una selección de platos y aperitivos de inspiración china. Un lugar perfecto para probar sabores diferentes, compartir platos y acompañarlos con una bebida.
+            Una propuesta sencilla, económica y diferente para quienes quieren salir de lo habitual.Especialidades: Cocina china · Arroces · Tallarines · Dim sum · Aperitivos · Platos para compartir<br>
+            <br>Especialidades: Cocina china · Arroces · Tallarines · Dim sum · Aperitivos · Platos para compartir</p>
+        </section>
+        </div>
+
+    </main>
+
+    <footer id="contacto">
+        <h3>Contáctanos</h3>
+        <p>croquetapp@gmail.com<br>
+        Tambien por nuestro telefono: +34 422 43 34 50</p>
+        <p>© 2026 CroquetApp - Reparto de comida mediante drones</p>
+        <a href="https://github.com/enekograciacebanc-droid/Reto_1_Equipo_Croqueta/tree/staging-global" target="_blank"> 
+        <img class="GitHub_img" src="https://i.ibb.co/wFwJszG6/github.png" alt="github">
+        </a>
+    </footer>
+
+</body>
+
+</html>
