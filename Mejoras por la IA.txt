@@ -1,0 +1,151 @@
+MEJORAS PARA LA PÁGINA WEB DE CROQUETAPP
+
+1. DISEÑO MÁS MODERNO
+
+Mantener el naranja como color principal de CroquetApp, pero combinarlo con blanco y tonos crema para conseguir un diseño más limpio y profesional.
+
+2. CABECERA
+
+Mejorar la cabecera colocando el logo junto al nombre de CroquetApp y añadir una frase debajo, por ejemplo:
+
+“Tu comida, directamente desde el cielo”
+
+3. MENÚ DE NAVEGACIÓN
+
+Mejorar el menú superior para que los apartados estén mejor distribuidos. También se puede hacer que permanezca visible mientras el usuario baja por la página.
+
+Los apartados serían:
+
+Inicio
+Cómo funciona
+Ventajas
+Restaurantes
+Contacto
+
+4. ORGANIZACIÓN DE LOS RESTAURANTES
+
+Mostrar cada restaurante como una tarjeta independiente.
+
+Cada tarjeta tendría:
+
+* Imagen del restaurante.
+* Nombre.
+* Descripción.
+* Especialidades.
+* Botón “Ver menú”.
+
+Esto haría que la página fuese más visual y fácil de utilizar.
+
+5. ELIMINAR LOS MÁRGENES FIJOS
+
+En el código original se utilizan muchos márgenes de 300 píxeles. Esto puede provocar problemas cuando la página se abre en pantallas de diferentes tamaños.
+
+Es mejor utilizar sistemas como Flexbox o Grid para que los elementos se coloquen automáticamente.
+
+6. IMÁGENES
+
+Intentar que todas las imágenes tengan un tamaño y formato parecido para que las tarjetas de los restaurantes estén alineadas y tengan un aspecto uniforme.
+
+7. BOTONES
+
+Añadir botones como:
+
+“Ver menú”
+“Pedir ahora”
+
+Estos botones permitirían que la página fuese más interactiva y que posteriormente se puedan conectar con los menús de cada restaurante.
+
+8. ANIMACIONES
+
+Añadir pequeñas animaciones al pasar el ratón por encima de las tarjetas y botones.
+
+Por ejemplo, que una tarjeta se eleve ligeramente o que el botón cambie de color.
+
+Las animaciones deben ser sencillas para no sobrecargar la página.
+
+9. ADAPTACIÓN A MÓVILES
+
+La página debe adaptarse automáticamente a móviles, tablets y ordenadores.
+
+En ordenador, la imagen del restaurante puede aparecer al lado de la información.
+
+En móvil, la imagen puede aparecer arriba y la información debajo.
+
+10. APARTADO “¿QUIÉNES SOMOS?”
+
+Ampliar la información sobre CroquetApp.
+
+Explicar que somos una empresa dedicada al reparto de comida mediante drones y que nuestro objetivo es ofrecer una alternativa rápida, moderna y eficiente al reparto tradicional.
+
+11. APARTADO “¿CÓMO FUNCIONA?”
+
+Mostrar el funcionamiento mediante tres pasos:
+
+1. Elegir un restaurante.
+2. Seleccionar los productos y realizar el pedido.
+3. Recibir la comida mediante un dron.
+
+Esto permite que el usuario entienda rápidamente cómo funciona el servicio.
+
+12. APARTADO DE VENTAJAS
+
+Añadir varias ventajas de CroquetApp:
+
+* Entregas rápidas.
+* Uso de tecnología de drones.
+* Comodidad.
+* Facilidad para realizar pedidos.
+* Diferentes restaurantes.
+* Sistema de reparto innovador.
+
+13. CONTACTO
+
+Mejorar el apartado de contacto haciendo que el correo electrónico y el teléfono sean interactivos.
+
+También se puede añadir un enlace al GitHub del proyecto.
+
+14. CORRECCIÓN DEL TEXTO
+
+Revisar las faltas de ortografía y las frases repetidas.
+
+Por ejemplo:
+
+“Como funciona” → “Cómo funciona”
+
+“Tambien” → “También”
+
+También hay que eliminar la repetición de las especialidades del restaurante chino.
+
+15. MEJORAR LA ESTRUCTURA DEL HTML
+
+Organizar mejor el código utilizando diferentes elementos HTML según la función que tengan.
+
+Por ejemplo, cada restaurante puede considerarse una sección independiente.
+
+Esto hace que el código sea más ordenado y fácil de entender.
+
+16. HACER QUE LA PÁGINA SEA REALMENTE INTERACTIVA
+
+Una vez terminado el diseño, se puede añadir JavaScript para que los botones funcionen.
+
+El funcionamiento podría ser:
+
+Página principal
+↓
+Restaurantes
+↓
+Elegir restaurante
+↓
+Ver menú
+↓
+Elegir productos
+↓
+Añadir al carrito
+↓
+Realizar pedido
+↓
+Confirmar entrega
+↓
+Dron en camino
+
+De esta forma, CroquetApp no sería solamente una página informativa, sino una pequeña aplicación de reparto de comida mediante drones.
