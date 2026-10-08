@@ -1,0 +1,1129 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CroquetApp | Comida a domicilio</title>
+
+    <style>
+
+        /* ==============================
+           CONFIGURACIÓN GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff8ef;
+            color: #333;
+        }
+
+
+        /* ==============================
+           CABECERA
+        ============================== */
+
+        header {
+            background: linear-gradient(135deg, #ff9800, #ffb74d);
+            color: white;
+        }
+
+        .cabecera {
+            min-height: 160px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 20px;
+
+            padding: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+
+            object-fit: contain;
+        }
+
+        .cabecera h1 {
+            font-family: Georgia, serif;
+
+            font-size: 55px;
+
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+        }
+
+        .cabecera p {
+            position: absolute;
+
+            margin-top: 110px;
+
+            font-size: 18px;
+        }
+
+
+        /* ==============================
+           MENÚ
+        ============================== */
+
+        nav {
+            background-color: #e67e00;
+
+            display: flex;
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: #e67e00;
+        }
+
+
+        /* ==============================
+           PRESENTACIÓN
+        ============================== */
+
+        .hero {
+            min-height: 500px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(255, 152, 0, 0.85),
+                    rgba(255, 183, 77, 0.85)
+                );
+        }
+
+        .hero-contenido {
+            max-width: 800px;
+
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 50px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 21px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .boton-principal {
+            display: inline-block;
+
+            background-color: white;
+
+            color: #e67e00;
+
+            text-decoration: none;
+
+            padding: 15px 30px;
+
+            border-radius: 30px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .boton-principal:hover {
+            transform: scale(1.08);
+
+            background-color: #333;
+
+            color: white;
+        }
+
+
+        /* ==============================
+           SECCIONES
+        ============================== */
+
+        .contenedor {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .seccion {
+            padding: 80px 0;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+
+            color: #e67e00;
+
+            font-size: 38px;
+
+            margin-bottom: 20px;
+        }
+
+        .subtitulo {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 50px;
+
+            color: #666;
+
+            line-height: 1.7;
+
+            font-size: 18px;
+        }
+
+
+        /* ==============================
+           TARJETAS DE INFORMACIÓN
+        ============================== */
+
+        .tarjetas {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background-color: white;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .icono {
+            font-size: 50px;
+
+            margin-bottom: 20px;
+        }
+
+        .tarjeta h3 {
+            color: #e67e00;
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+        .tarjeta p {
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           RESTAURANTES
+        ============================== */
+
+        #restaurantes {
+            background-color: #fff1dc;
+        }
+
+        .restaurantes {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .restaurante {
+            background-color: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .restaurante:hover {
+            transform: translateY(-8px);
+        }
+
+        .restaurante img {
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+        }
+
+        .restaurante-contenido {
+            padding: 25px;
+        }
+
+        .restaurante h3 {
+            color: #e67e00;
+
+            font-family: Georgia, serif;
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+        .restaurante p {
+            color: #555;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+        }
+
+        .especialidades {
+            font-weight: bold;
+
+            color: #333 !important;
+        }
+
+        .boton-menu {
+            display: inline-block;
+
+            background-color: #ff9800;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .boton-menu:hover {
+            background-color: #d96f00;
+        }
+
+
+        /* ==============================
+           CÓMO FUNCIONA
+        ============================== */
+
+        .pasos {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            text-align: center;
+        }
+
+        .paso {
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .numero {
+            width: 60px;
+            height: 60px;
+
+            margin: 0 auto 20px;
+
+            background-color: #ff9800;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+        .paso h3 {
+            color: #e67e00;
+
+            margin-bottom: 15px;
+        }
+
+        .paso p {
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           CONTACTO
+        ============================== */
+
+        .contacto {
+            background-color: #333;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 70px 20px;
+        }
+
+        .contacto h2 {
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+        .contacto p {
+            margin: 10px;
+
+            color: #ddd;
+        }
+
+        .contacto a {
+            color: #ffb74d;
+
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background-color: #222;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        .github {
+            display: inline-block;
+
+            margin-top: 15px;
+        }
+
+        .github img {
+            width: 50px;
+            height: 50px;
+
+            transition: 0.3s;
+        }
+
+        .github img:hover {
+            transform: scale(1.15);
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            .cabecera h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 38px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .restaurantes {
+                grid-template-columns: 1fr;
+            }
+
+            .pasos {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .cabecera {
+                flex-direction: column;
+
+                min-height: 200px;
+            }
+
+            .cabecera p {
+                position: static;
+
+                margin-top: -10px;
+            }
+
+            .cabecera h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .titulo-seccion {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         CABECERA
+    ============================== -->
+
+    <header>
+
+        <div class="cabecera">
+
+            <img
+                class="logo"
+                src="https://i.ibb.co/QjMsLwsy/croquetapp-transparente.png"
+                alt="Logo CroquetApp">
+
+            <h1>CroquetApp</h1>
+
+            <p>Tu comida. Tu restaurante. Tu dron.</p>
+
+        </div>
+
+
+        <!-- MENÚ -->
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#funciona">Cómo funciona</a>
+
+            <a href="#ventajas">Ventajas</a>
+
+            <a href="#restaurantes">Restaurantes</a>
+
+            <a href="#contacto">Contacto</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==============================
+         PRESENTACIÓN
+    ============================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-contenido">
+
+            <h2>La comida llega volando</h2>
+
+            <p>
+                En CroquetApp llevamos tus platos favoritos
+                directamente hasta ti mediante drones.
+                Rápido, sencillo y diferente.
+            </p>
+
+            <a href="#restaurantes" class="boton-principal">
+                Ver restaurantes
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SOBRE NOSOTROS
+    ============================== -->
+
+    <section class="seccion">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">
+                ¿Quiénes somos?
+            </h2>
+
+            <p class="subtitulo">
+
+                Somos CroquetApp, una empresa especializada
+                en el reparto de comida mediante drones.
+                Nuestro objetivo es unir restaurantes,
+                tecnología y clientes para crear una nueva
+                forma de pedir comida.
+
+            </p>
+
+
+            <div class="tarjetas">
+
+
+                <div class="tarjeta">
+
+                    <div class="icono">
+                        🚁
+                    </div>
+
+                    <h3>
+                        Tecnología
+                    </h3>
+
+                    <p>
+                        Utilizamos drones para realizar
+                        entregas de comida de una forma
+                        moderna e innovadora.
+                    </p>
+
+                </div>
+
+
+
+                <div class="tarjeta">
+
+                    <div class="icono">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Rapidez
+                    </h3>
+
+                    <p>
+                        Reducimos los tiempos de espera
+                        para que puedas disfrutar de tu
+                        comida cuanto antes.
+                    </p>
+
+                </div>
+
+
+
+                <div class="tarjeta">
+
+                    <div class="icono">
+                        🍔
+                    </div>
+
+                    <h3>
+                        Variedad
+                    </h3>
+
+                    <p>
+                        Puedes elegir entre diferentes
+                        restaurantes y tipos de comida.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CÓMO FUNCIONA
+    ============================== -->
+
+    <section class="seccion" id="funciona">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">
+                ¿Cómo funciona?
+            </h2>
+
+            <p class="subtitulo">
+                Pedir comida con CroquetApp es muy sencillo.
+            </p>
+
+
+            <div class="pasos">
+
+
+                <div class="paso">
+
+                    <div class="numero">
+                        1
+                    </div>
+
+                    <h3>
+                        Elige restaurante
+                    </h3>
+
+                    <p>
+                        Selecciona uno de nuestros
+                        restaurantes disponibles.
+                    </p>
+
+                </div>
+
+
+
+                <div class="paso">
+
+                    <div class="numero">
+                        2
+                    </div>
+
+                    <h3>
+                        Realiza tu pedido
+                    </h3>
+
+                    <p>
+                        Escoge los platos que quieras
+                        y confirma tu pedido.
+                    </p>
+
+                </div>
+
+
+
+                <div class="paso">
+
+                    <div class="numero">
+                        3
+                    </div>
+
+                    <h3>
+                        Recibe tu comida
+                    </h3>
+
+                    <p>
+                        Nuestro dron prepara la entrega
+                        y lleva tu comida directamente hasta ti.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         VENTAJAS
+    ============================== -->
+
+    <section class="seccion" id="ventajas">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">
+                ¿Por qué CroquetApp?
+            </h2>
+
+            <p class="subtitulo">
+                Una nueva forma de recibir tu comida.
+            </p>
+
+
+            <div class="tarjetas">
+
+
+                <div class="tarjeta">
+
+                    <div class="icono">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Entregas rápidas
+                    </h3>
+
+                    <p>
+                        Los drones permiten realizar
+                        rutas directas hasta el cliente.
+                    </p>
+
+                </div>
+
+
+
+                <div class="tarjeta">
+
+                    <div class="icono">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Innovación
+                    </h3>
+
+                    <p>
+                        Apostamos por nuevas tecnologías
+                        aplicadas al reparto de comida.
+                    </p>
+
+                </div>
+
+
+
+                <div class="tarjeta">
+
+                    <div class="icono">
+                        📱
+                    </div>
+
+                    <h3>
+                        Fácil de utilizar
+                    </h3>
+
+                    <p>
+                        El proceso está pensado para que
+                        pedir comida sea rápido y sencillo.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         RESTAURANTES
+    ============================== -->
+
+    <section class="seccion" id="restaurantes">
+
+        <div class="contenedor">
+
+            <h2 class="titulo-seccion">
+                Restaurantes disponibles
+            </h2>
+
+            <p class="subtitulo">
+                Elige tu restaurante favorito y descubre
+                todos los platos disponibles.
+            </p>
+
+
+            <div class="restaurantes">
+
+
+                <!-- ALI KEBAB -->
+
+                <article class="restaurante">
+
+                    <img
+                        src="https://i.ibb.co/C5W02cK7/alikebab.png"
+                        alt="Ali Kebab">
+
+                    <div class="restaurante-contenido">
+
+                        <h3>
+                            Ali Kebab
+                        </h3>
+
+                        <p>
+                            Sabor que viene directo del Mediterráneo.
+                            Kebab, dürüm, lahmacun y mucho más.
+                        </p>
+
+                        <p class="especialidades">
+                            Especialidades:
+                            Kebab · Dürüm · Lahmacun ·
+                            Falafel · Hamburguesas
+                        </p>
+
+                        <a href="#" class="boton-menu">
+                            Ver menú
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BURGERWHATSAPP -->
+
+                <article class="restaurante">
+
+                    <img
+                        src="https://i.kym-cdn.com/photos/images/newsfeed/002/212/577/fee.jpg"
+                        alt="Burgerwhatsapp">
+
+                    <div class="restaurante-contenido">
+
+                        <h3>
+                            Burgerwhatsapp
+                        </h3>
+
+                        <p>
+                            Hamburguesas contundentes,
+                            patatas crujientes y comida
+                            perfecta para compartir.
+                        </p>
+
+                        <p class="especialidades">
+                            Especialidades:
+                            Hamburguesas · Patatas ·
+                            Nuggets · Alitas · Menús
+                        </p>
+
+                        <a href="#" class="boton-menu">
+                            Ver menú
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BAR PEPE -->
+
+                <article class="restaurante">
+
+                    <img
+                        src="https://i0.wp.com/barpepedonostia.com/wp-content/uploads/2024/02/IMG_3075-3.jpg?fit=5709%2C3776&ssl=1"
+                        alt="Bar Pepe">
+
+                    <div class="restaurante-contenido">
+
+                        <h3>
+                            Bar Pepe
+                        </h3>
+
+                        <p>
+                            El bar de toda la vida.
+                            Pinchos, tortilla, bocadillos
+                            y cocina tradicional.
+                        </p>
+
+                        <p class="especialidades">
+                            Especialidades:
+                            Pinchos · Tortilla · Croquetas ·
+                            Bocadillos · Raciones
+                        </p>
+
+                        <a href="#" class="boton-menu">
+                            Ver menú
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BAR CHINO -->
+
+                <article class="restaurante">
+
+                    <img
+                        src="https://foodandfriends.org/wp-content/uploads/2025/04/Copy-of-20230913-JBFTasteAmerica-14.jpg"
+                        alt="Bar chino">
+
+                    <div class="restaurante-contenido">
+
+                        <h3>
+                            Bar Tang-Yuang-Qing-Song-Xue-Ming-Jin
+                        </h3>
+
+                        <p>
+                            Sabores de China en un ambiente
+                            cercano y diferente.
+                        </p>
+
+                        <p class="especialidades">
+                            Especialidades:
+                            Cocina china · Arroces ·
+                            Tallarines · Dim sum
+                        </p>
+
+                        <a href="#" class="boton-menu">
+                            Ver menú
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CONTACTO
+    ============================== -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>
+            ¿Tienes alguna pregunta?
+        </h2>
+
+        <p>
+            Estamos aquí para ayudarte.
+        </p>
+
+        <p>
+            📧
+            <a href="mailto:croquetapp@gmail.com">
+                croquetapp@gmail.com
+            </a>
+        </p>
+
+        <p>
+            📞 +34 422 43 34 50
+        </p>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CroquetApp
+        </p>
+
+        <p>
+            Reparto de comida mediante drones
+        </p>
+
+
+        <a
+            class="github"
+            href="https://github.com/enekograciacebanc-droid/Reto_1_Equipo_Croqueta/tree/staging-global"
+            target="_blank">
+
+            <img
+                src="https://i.ibb.co/wFwJszG6/github.png"
+                alt="GitHub">
+
+        </a>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,128 @@
+.cabecera {
+    background-color: rgb(255, 183, 77);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.cabecera img {
+    position: absolute;
+    left: calc(50% - 700px);
+    width: 50px;
+    height: 50px;
+}
+
+.cabecera h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    margin: 0;
+}
+
+nav {
+    text-align: center;
+    background-color: rgb(255, 153, 0);
+    padding: 30px;
+}
+
+.indice {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.indice:hover {
+    text-decoration: underline;
+}
+
+.seccion {
+    text-align: center;
+    background-color: rgb(203, 233, 255);
+    margin: 3% 20%;
+    padding: 20px;
+}
+
+.seccion_restaurantes {
+    background-color: rgb(210, 126, 0);
+    padding: 70px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+.seccion_lista_img {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.seccion_lista {
+    text-align: left;
+    background-color: rgb(203, 233, 255);
+    margin: 3%;
+    margin-left: 300px;
+    padding: 20px;
+}
+
+.seccion_lista_img img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-left: 300px;
+}
+
+.h3_lista {
+    margin-left: 300px;
+    font-size: 50px;
+}
+
+footer {
+    position: relative;
+    background-color: rgb(255, 153, 0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer h3 {
+    margin: 0;
+}
+
+.GitHub_img {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+}
+
+.sobre_nosotros,
+.sostenibilidad {
+    background-color: rgb(203, 233, 255);
+    margin: 3% 15%;
+    padding: 40px 80px;
+    text-align: center;
+}
+
+.sobre_nosotros h2,
+.sostenibilidad h2 {
+    color: rgb(210, 126, 0);
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.sobre_nosotros p,
+.sostenibilidad p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.sostenibilidad h3 {
+    color: rgb(210, 126, 0);
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
