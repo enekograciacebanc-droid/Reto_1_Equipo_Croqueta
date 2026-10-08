@@ -4,7 +4,8 @@ dinero_flo = 0
 producto_elegido_list = [] #Aqui empezamos con la lista de los productos
 total = 0
 
-while True: #Menu principal del programa de aqui se ramifica todo 
+while True:
+    print() #Menu principal del programa de aqui se ramifica todo 
     print("======================")
     print("Menú de Venta (Prueba)")
     print("======================")
@@ -18,6 +19,9 @@ while True: #Menu principal del programa de aqui se ramifica todo
         break
     elif seleccion_int == 1:   #este es el segundo menu donde se ramifican los restaurantes y los menus 
         while True:
+            
+            print()
+            print()
             print("===============")
             print("¿Tienes hambre?")
             print("===============")
@@ -36,6 +40,9 @@ while True: #Menu principal del programa de aqui se ramifica todo
                     print("- ", producto)
             elif seleccion_int == 2:
                 while True:
+                    
+                    print()
+                    print()
                     print("===============")
                     print("Restaurantes")
                     print("===============")
@@ -49,6 +56,7 @@ while True: #Menu principal del programa de aqui se ramifica todo
 
                     if restaurante_int == 1:
                         while True:
+                            print()
                             print("Elegiste Ali Kebab")
                             print("1- kebab mixto 5€")
                             print("2- kebab de pollo 4€")
@@ -75,6 +83,7 @@ while True: #Menu principal del programa de aqui se ramifica todo
 
                     elif restaurante_int == 2:
                         while True:
+                            print()
                             print("Elige un producto de Burgerwatssapp")
                             print("1- Hamburguesa de whatsapp 5€")
                             print("2- Menu super hyper mega deluxe whatsapp 20€")
@@ -101,6 +110,7 @@ while True: #Menu principal del programa de aqui se ramifica todo
 
                     elif restaurante_int == 3:
                         while True:
+                            print()
                             print("Elige su producto de Bar Pepe")
                             print("1- Bocata lomo ya 5€")
                             print("2- Bocadillo de tortilla 4€")
@@ -127,6 +137,7 @@ while True: #Menu principal del programa de aqui se ramifica todo
 
                     elif restaurante_int == 4:
                         while True:
+                            print()
                             print("Elige su producto del bar tang-yuan-qing-song-xue-ming-jin")
                             print("1- Menu Tang(pastel Hu) 10€")
                             print("2- menu Yuan(hot pot de cordero) 10€")
@@ -152,12 +163,15 @@ while True: #Menu principal del programa de aqui se ramifica todo
                                 print("Introduce un valor valido.")
 
                     elif(restaurante_int == 5):
-                         print("-----SU CARRITO-----")
+                        
+                        print()
+                        print()
+                        print("-----SU CARRITO-----")
                     
-                         if len(producto_elegido_list) == 0:
+                        if len(producto_elegido_list) == 0:
                                print("Su carro esta vacio")
                     
-                         else:
+                        else:
                               for producto in producto_elegido_list:
                                    print("- " + producto)
                                    print("El total de lo gastado es " +str(total) + "€")
@@ -175,15 +189,16 @@ while True: #Menu principal del programa de aqui se ramifica todo
                 print("Introduce un valor valido.")
 #Ese bloque se activa cuando el usuario pulsa el 2. Primero muestra el precio total acumulado (str(total)) y el texto de introducción. Después, el bucle for lee tu lista producto_elegido_list e imprime cada comida en una línea independiente con un guión delante. Está perfectamente redactado porque el mensaje del dinero solo sale una vez antes de desplegar toda la lista de productos.
     elif seleccion_int == 2:
+        print()
         print("El total de lo gastado es " + str(total))
         print(" Y sus productos elegidos son: ")
         for producto in producto_elegido_list:
             print("- " + producto)
-       
         break
-
+        
+       
     else:
-        print("Introduce un valor valido.")# si sale un numero que no concuerda pasa esto 
+        print("Introduce un valor valido.")  # si sale un numero que no concuerda pasa esto
 
 print("Vuelve pronto.")
 input("Presione para salir")
